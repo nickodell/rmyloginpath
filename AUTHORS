@@ -1,1 +1,15 @@
-Thomas Roten (Original Author)
+rmyloginpath was written by:
+
+ * Nick ODell
+
+rmyloginpath is based on prior work called myloginpath.
+myloginpath was written by:
+
+ * Thomas Roten (Original Author)
+ * Inada Naoki
+ * Nick ODell
+ * github.com/singhujjwal
+
+rmyloginpath also incorporates code from the R 'ini' package by David Valentim Dias.
+
+(Is this file incomplete? Please submit an issue.)
