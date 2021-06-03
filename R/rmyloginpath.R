@@ -1,7 +1,3 @@
-library(digest)
-source("parse_config.R")
-
-
 # Buffer at the beginning of the login path file.
 UNUSED_BUFFER_LENGTH = 4
 
@@ -101,6 +97,6 @@ get_aes_cipher <- function(key) {
 # library()
 # to.read = file("~/.mylogin.cnf", "rb")
 # print(readBin(to.read, "raw", 10, endian="little"))
-config <- read()
-con <- textConnection(config, "r")
-print(read.ini(con)$andre)
+# config <- read()
+# con <- textConnection(config, "r")
+# print(read.ini(con)$andre)
