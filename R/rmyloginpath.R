@@ -90,5 +90,5 @@ create_key <- function(key) {
 
 get_aes_cipher <- function(key) {
   # ECB mode ignores the IV
-  AES(key, mode = "ECB", IV = NULL)
+  digest::AES(key, mode = "ECB", IV = NULL)
 }
