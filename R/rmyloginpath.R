@@ -15,7 +15,14 @@ cipher_store_length <- 4
 #' @export
 mylogin.read <- function() {
   fp <- file("~/.mylogin.cnf", "rb")
-  read_encrypted_file(fp)
+  loginFile <- read_encrypted_file(fp)
+  close(fp)
+  loginFile
+}
+
+mylogin.parse <- function() {
+  loginFile <- mylogin.read()
+  read.mysql.ini(textConnection(loginFile))
 }
 
 read_bytes <- function(fp, n) {
