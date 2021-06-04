@@ -18,7 +18,7 @@
 #'
 #' @examples
 #'
-read.ini <- function(con, encoding = getOption("encoding")) {
+read.mysql.ini <- function(con, encoding = getOption("encoding")) {
 
   index <- function(x, rune) {
     equalPosition = numeric(1)
