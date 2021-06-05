@@ -7,7 +7,7 @@
 
 #' Read and parse .ini file to list
 #'
-#' @param con file connection to parse
+#' @param fileText text of file to parse
 #' @param encoding Encoding of filepath parameter, will default to system
 #' encoding if not specifield
 #'
@@ -17,7 +17,7 @@
 #' a new list
 #'
 #' @examples
-read.mysql.ini <- function(con, encoding = getOption("encoding")) {
+read.mysql.ini <- function(fileText, encoding = getOption("encoding")) {
   index <- function(x, rune) {
     equalPosition <- numeric(1)
     for (pos in 1:nchar(x)) {
@@ -44,11 +44,9 @@ read.mysql.ini <- function(con, encoding = getOption("encoding")) {
 
   ini <- list()
 
-  while (TRUE) {
-    line <- readLines(con, n = 1, encoding = encoding, warn = F)
-    if (length(line) == 0) {
-      break
-    }
+  lines = strsplit(fileText, "\n", fixed = TRUE)[[1]]
+
+  for (line in lines) {
 
     if (grepl(ignoreREGEXP, line)) {
       next

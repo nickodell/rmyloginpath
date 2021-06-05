@@ -23,7 +23,7 @@ mylogin.read <- function() {
 #' @export
 mylogin.parse <- function() {
   login_file <- mylogin.read()
-  read.mysql.ini(textConnection(login_file))
+  read.mysql.ini(login_file)
 }
 
 read_bytes <- function(fp, n) {

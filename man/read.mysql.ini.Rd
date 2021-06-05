@@ -4,10 +4,10 @@
 \alias{read.mysql.ini}
 \title{Read and parse .ini file to list}
 \usage{
-read.mysql.ini(con, encoding = getOption("encoding"))
+read.mysql.ini(fileText, encoding = getOption("encoding"))
 }
 \arguments{
-\item{con}{file connection to parse}
+\item{fileText}{text of file to parse}
 
 \item{encoding}{Encoding of filepath parameter, will default to system
 encoding if not specifield}
