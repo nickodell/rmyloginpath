@@ -17,7 +17,7 @@
 #' a new list
 #'
 #' @examples
-read.mysql.ini <- function(fileText, encoding = getOption("encoding")) {
+read_mysql_ini <- function(fileText, encoding = getOption("encoding")) {
   index <- function(x, rune) {
     equalPosition <- numeric(1)
     for (pos in 1:nchar(x)) {

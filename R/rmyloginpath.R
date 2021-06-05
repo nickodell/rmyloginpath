@@ -13,17 +13,29 @@ cipher_store_length <- 4
 
 
 #' @export
-mylogin.read <- function() {
-  fp <- file("~/.mylogin.cnf", "rb")
+login_read <- function(path = NULL) {
+  if (missing(path)) {
+    path <- get_login_path_file()
+  }
+  fp <- file(path, "rb")
   login_file <- read_encrypted_file(fp)
   close(fp)
   login_file
 }
 
 #' @export
-mylogin.parse <- function() {
-  login_file <- mylogin.read()
-  read.mysql.ini(login_file)
+login_parse <- function(path = NULL) {
+  if (missing(path)) {
+    path <- get_login_path_file()
+  }
+  login_file <- login_read(path)
+  read_mysql_ini(login_file)
+}
+
+get_login_path_file <- function() {
+  default <- file.path("~", ".mylogin.cnf")
+  # TODO: Windows stores its config file in APPDATA
+  Sys.getenv("MYSQL_TEST_LOGIN_FILE", unset=default)
 }
 
 read_bytes <- function(fp, n) {
