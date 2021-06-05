@@ -17,9 +17,7 @@
 #' a new list
 #'
 #' @examples
-#'
 read.mysql.ini <- function(con, encoding = getOption("encoding")) {
-
   index <- function(x, rune) {
     equalPosition <- numeric(1)
     for (pos in 1:nchar(x)) {
@@ -47,7 +45,6 @@ read.mysql.ini <- function(con, encoding = getOption("encoding")) {
   ini <- list()
 
   while (TRUE) {
-
     line <- readLines(con, n = 1, encoding = encoding, warn = F)
     if (length(line) == 0) {
       break
@@ -75,7 +72,6 @@ read.mysql.ini <- function(con, encoding = getOption("encoding")) {
       ini[[lastSection]] <- c(ini[[lastSection]], list(key = value))
       names(ini[[lastSection]])[match("key", names(ini[[lastSection]]))] <- key
     }
-
   }
 
   ini
