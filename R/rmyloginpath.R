@@ -12,6 +12,12 @@ cipher_store_length <- 4
 
 
 
+#' Decrypt login path file
+#'
+#' @param path optional, path to login path file.
+#'
+#' @return String containing decrypted login paths in INI format
+#'
 #' @export
 login_read <- function(path = NULL) {
   if (missing(path)) {
@@ -23,6 +29,12 @@ login_read <- function(path = NULL) {
   login_file
 }
 
+#' Decrypt and parse login path file
+#'
+#' @param path optional, path to login path file.
+#'
+#' @return List with login details
+#'
 #' @export
 login_parse <- function(path = NULL) {
   if (missing(path)) {
