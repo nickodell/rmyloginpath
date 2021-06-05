@@ -31,17 +31,22 @@ login_read <- function(path = NULL) {
 
 #' Decrypt and parse login path file
 #'
+#' @param login_path name of server to connect to
 #' @param path optional, path to login path file.
 #'
 #' @return List with login details
 #'
 #' @export
-login_parse <- function(path = NULL) {
+login_parse <- function(login_path, path = NULL) {
   if (missing(path)) {
     path <- get_login_path_file()
   }
   login_file <- login_read(path)
-  read_mysql_ini(login_file)
+  login_details <- read_mysql_ini(login_file)[[login_path]]
+  if (is.null(login_details)) {
+    stop(sprintf("Login path '%s' not found", login_path))
+  }
+  login_details
 }
 
 get_login_path_file <- function() {
