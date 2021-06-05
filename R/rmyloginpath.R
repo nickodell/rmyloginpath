@@ -52,7 +52,7 @@ login_parse <- function(login_path, path = NULL) {
 get_login_path_file <- function() {
   default <- file.path("~", ".mylogin.cnf")
   # TODO: Windows stores its config file in APPDATA
-  Sys.getenv("MYSQL_TEST_LOGIN_FILE", unset=default)
+  Sys.getenv("MYSQL_TEST_LOGIN_FILE", unset = default)
 }
 
 read_bytes <- function(fp, n) {
@@ -61,7 +61,9 @@ read_bytes <- function(fp, n) {
 }
 
 read_length <- function(fp) {
-  len <- readBin(fp, "integer", n = 1, size = cipher_store_length, endian = "little")
+  len <- readBin(fp, "integer", n = 1
+                 size = cipher_store_length,
+                 endian = "little")
   if (length(len) == 0) {
     # Failed to read length. End of file
     -1

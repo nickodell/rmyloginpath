@@ -40,7 +40,7 @@ read_mysql_ini <- function(fileText) {
 
   ini <- list()
 
-  lines = strsplit(fileText, "\n", fixed = TRUE)[[1]]
+  lines <- strsplit(fileText, "\n", fixed = TRUE)[[1]]
 
   for (line in lines) {
 
