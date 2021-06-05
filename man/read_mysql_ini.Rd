@@ -4,13 +4,10 @@
 \alias{read_mysql_ini}
 \title{Read and parse .ini file to list}
 \usage{
-read_mysql_ini(fileText, encoding = getOption("encoding"))
+read_mysql_ini(fileText)
 }
 \arguments{
 \item{fileText}{text of file to parse}
-
-\item{encoding}{Encoding of filepath parameter, will default to system
-encoding if not specifield}
 }
 \value{
 List with length equivalent to number of \link{sections}, each section is

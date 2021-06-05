@@ -1,5 +1,5 @@
 # Taken from the R package 'ini'
-# Modified to accept a connection, and to handle
+# Modified to read in-memory files, and to handle
 # quoted keys.
 # Copyright (c) 2016 David Valentim Dias
 # MIT Licenced - see LICENSE.txt for more
@@ -8,16 +8,12 @@
 #' Read and parse .ini file to list
 #'
 #' @param fileText text of file to parse
-#' @param encoding Encoding of filepath parameter, will default to system
-#' encoding if not specifield
 #'
 #' @details Lines starting with '#' or ';' are comments and will not be parsed
 #'
 #' @return List with length equivalent to number of [sections], each section is
 #' a new list
-#'
-#' @examples
-read_mysql_ini <- function(fileText, encoding = getOption("encoding")) {
+read_mysql_ini <- function(fileText) {
   index <- function(x, rune) {
     equalPosition <- numeric(1)
     for (pos in 1:nchar(x)) {
