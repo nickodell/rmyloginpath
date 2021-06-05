@@ -20,6 +20,7 @@ mylogin.read <- function() {
   login_file
 }
 
+#' @export
 mylogin.parse <- function() {
   login_file <- mylogin.read()
   read.mysql.ini(textConnection(login_file))
