@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "nickodell@gmail.com")
 Description: Decrypt and parse MySQL's login path file.
-License: MIT + file LICENSE.txt
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
