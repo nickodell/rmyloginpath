@@ -10,7 +10,7 @@ read_mysql_ini(fileText)
 \item{fileText}{text of file to parse}
 }
 \value{
-List with length equivalent to number of \link{sections}, each section is
+List with length equivalent to number of sections, each section is
 a new list
 }
 \description{

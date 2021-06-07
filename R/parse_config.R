@@ -11,7 +11,7 @@
 #'
 #' @details Lines starting with '#' or ';' are comments and will not be parsed
 #'
-#' @return List with length equivalent to number of [sections], each section is
+#' @return List with length equivalent to number of sections, each section is
 #' a new list
 read_mysql_ini <- function(fileText) {
   index <- function(x, rune) {
