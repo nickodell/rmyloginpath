@@ -61,7 +61,7 @@ read_bytes <- function(fp, n) {
 }
 
 read_length <- function(fp) {
-  len <- readBin(fp, "integer", n = 1
+  len <- readBin(fp, "integer", n = 1,
                  size = cipher_store_length,
                  endian = "little")
   if (length(len) == 0) {
