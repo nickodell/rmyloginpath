@@ -2,7 +2,7 @@
 # Modified to read in-memory files, and to handle
 # quoted keys.
 # Copyright (c) 2016 David Valentim Dias
-# MIT Licenced - see LICENSE.txt for more
+# GPLv3 Licenced - see LICENSE.txt for more
 
 
 #' Read and parse .ini file to list
